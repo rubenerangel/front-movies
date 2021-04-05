@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MoviesService } from './movies.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,11 +7,5 @@ import { MoviesService } from './movies.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'frontmovies';
-  name = '';
-
-  constructor(private movies: MoviesService) {
-    let data = this.movies.getData();
-    this.name = data.name;
-  }
+  title = 'Movies List';
 }

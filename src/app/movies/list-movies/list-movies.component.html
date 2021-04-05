@@ -1,2 +1,28 @@
-<h2>list-movies works!</h2>
+<div class="container">
+  <div *ngFor="let movie of allMovies" class="row d-flex align-items-center mb-1 shadow-sm">
+    <div class="col">
+      <div><small class="text-muted">Title</small></div>
+      <div class="pl-1"><h3>{{ movie.title }}</h3></div>
+      
+    </div>
+    <div class="col text-center">
+      <div class="text-left"><small class="text-muted">Year</small></div>
+      <div class="pl-1"><h3>{{ movie.year }}</h3></div>
+    </div>
+    <div class="col p-2 text-center">
+      <img src="{{movie.poster}}" alt="{{movie.poster}}" width="150px" height="250px" class="mx-auto">
+    </div>
+  </div>
+
+  <!-- <div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshMovies()">
+    </ngb-pagination>
+  
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshMovies()">
+      <option [ngValue]="10">10 items per page</option>
+      <option [ngValue]="20">20 items per page</option>
+      <option [ngValue]="100">100 items per page</option>
+    </select>
+  </div> -->
+</div>
 
