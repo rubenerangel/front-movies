@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../../movies.service';
+import {map} from 'rxjs/operators'
 
 interface MoviesType {
   year: string;
@@ -18,6 +19,7 @@ export class ListMoviesComponent implements OnInit {
   page = 1;
   pageSize = 10;
   collectionSize = 0;
+  loading = true;
 
   constructor(private movies: MoviesService) {
     this.refreshMovies();
@@ -26,11 +28,14 @@ export class ListMoviesComponent implements OnInit {
   refreshMovies() {
     this.movies.getData().subscribe(data => {
       console.warn(data);
+      this.loading = false;
       this.allMovies = data;
-      
+      // data.map()
     });
 
-    
+    // this.movies.getData().map(res => {
+
+    // })
   }
 
   ngOnInit(): void {

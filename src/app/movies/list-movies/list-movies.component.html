@@ -1,4 +1,6 @@
+
 <div class="container">
+  <div *ngIf="loading" class="text-success text-center">Loading...</div>
   <div *ngFor="let movie of allMovies" class="row d-flex align-items-center mb-1 shadow-sm">
     <div class="col">
       <div><small class="text-muted">Title</small></div>
