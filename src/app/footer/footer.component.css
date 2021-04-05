@@ -1,8 +1,9 @@
 h5 {
-  background-color: skyblue;
+  background-color: #F18C13;
+  color: aliceblue;
   padding: 20px;
   margin: 0px;
   position: absolute;
-  width: 97.1%;
+  width: 100%;
   bottom: 0;
 }
