@@ -1,7 +1,7 @@
 
 <div class="container">
   <div *ngIf="loading" class="text-success text-center">Loading...</div>
-  <div *ngFor="let movie of allMovies" class="row d-flex align-items-center mb-1 shadow-sm">
+  <div *ngFor="let movie of allMovies | paginate: {itemsPerPage: 10, currentPage: p}" class="row d-flex align-items-center mb-1 shadow-sm">
     <div class="col">
       <div><small class="text-muted">Title</small></div>
       <div class="pl-1"><h3>{{ movie.title }}</h3></div>
@@ -15,6 +15,8 @@
       <img src="{{movie.poster}}" alt="{{movie.poster}}" width="150px" height="250px" class="mx-auto">
     </div>
   </div>
+
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
   <!-- <div class="d-flex justify-content-between p-2">
     <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshMovies()">

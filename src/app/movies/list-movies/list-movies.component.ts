@@ -10,7 +10,7 @@ import { MoviesService } from '../../movies.service';
 export class ListMoviesComponent implements OnInit {
 
   allMovies: any;
-  page = 1;
+  p: number = 1;
   pageSize = 10;
   collectionSize = 0;
   loading = true;
@@ -19,6 +19,7 @@ export class ListMoviesComponent implements OnInit {
 
   ngOnInit(): void {
     this.movies.getData().subscribe((result) => {
+      this.loading = false;
       console.warn('result', result);
       this.allMovies = result;
     })
